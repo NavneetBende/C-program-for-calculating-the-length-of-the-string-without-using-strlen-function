@@ -1,0 +1,22 @@
+// this method uses top down recursion
+#include <stdio.h>
+
+int getLen(char str[], int len)
+{
+    // when we reach end of the string
+    if(str[0] == '\0')
+        return len;
+    
+    // add 1 for current character
+    // get the length for rest of the string after current character
+    return getLen(str + 1, len + 1);
+}
+
+int main()
+{
+    char str[] = "PrepInsta";
+    int i, length = 0;
+    
+    printf("Len: %d",getLen(str, 0));
+    return 0;
+}
